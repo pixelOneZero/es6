@@ -4,6 +4,12 @@
 <title>
   es6 fundamental concepts
 </title>
+<style>
+pre {
+  background: #f9f9f9;
+  padding:1rem;
+}
+</style>
 </head>
 <body>
 
@@ -17,6 +23,7 @@ Topics:
     <a href="#constants">Constants</a>
   </li>
   <li>
+    <a href="#blockScope">Block-Scoped variables</a>
   </li>
   <li>
   </li>
@@ -44,9 +51,24 @@ Topics:
   <h3>
     Example:
   </h3>
-  <code>
+  <pre>
     const diameterOfEarth = 7917.5;
-  </code>
+  </pre>
+
+  <h2 id="blockScope">
+    Block-Scoped Variables
+  </h2>
+  <h3>
+    Example:
+  </h3>
+  <pre>
+    for (let i = 0; i < a.length; i++) {
+      let x = a[i]
+    }
+    for (let i = 0; i < b.length; i++) {
+      let y = b[i]
+    }
+  </pre>
 
   <hr/>
 
