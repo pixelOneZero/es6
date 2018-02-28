@@ -26,6 +26,7 @@ Topics:
     <a href="#blockScope">Block-Scoped variables</a>
   </li>
   <li>
+    <a href="#arrowFunctions">Arrow functions</a>
   </li>
   <li>
   </li>
@@ -48,9 +49,6 @@ Topics:
   <h2 id="constants">
     Constants
   </h2>
-  <h3>
-    Example:
-  </h3>
   <pre>
     const diameterOfEarth = 7917.5;
   </pre>
@@ -58,9 +56,6 @@ Topics:
   <h2 id="blockScope">
     Block-Scoped Variables
   </h2>
-  <h3>
-    Example:
-  </h3>
   <pre>
     for (let i = 0; i < a.length; i++) {
       let x = a[i]
@@ -68,6 +63,15 @@ Topics:
     for (let i = 0; i < b.length; i++) {
       let y = b[i]
     }
+  </pre>
+
+  <h2>
+    Arrow functions
+  </h2>
+  <pre>
+    odds  = evens.map(v => v + 1)
+    pairs = evens.map(v => ({ even: v, odd: v + 1 }))
+    nums  = evens.map((v, i) => v + i)
   </pre>
 
   <hr/>
