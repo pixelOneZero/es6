@@ -29,6 +29,7 @@ Topics:
     <a href="#arrowFunctions">Arrow functions</a>
   </li>
   <li>
+    <a href="#lexicalThis">Lexical <code>this</code></a>
   </li>
   <li>
   </li>
@@ -65,13 +66,26 @@ Topics:
     }
   </pre>
 
-  <h2>
+  <h2 id="arrowFunctions">
     Arrow functions
   </h2>
   <pre>
     odds  = evens.map(v => v + 1)
     pairs = evens.map(v => ({ even: v, odd: v + 1 }))
     nums  = evens.map((v, i) => v + i)
+  </pre>
+
+  <h2 id="lexicalThis">
+    Lexical <code>this</code>
+  </h2>
+  <p>
+    Replaces the traditional use of <code>var self = this</code>
+  </p>
+  <pre>
+    this.nums.forEach((v) => {
+    if (v % 5 === 0)
+        this.fives.push(v)
+    })
   </pre>
 
   <hr/>
