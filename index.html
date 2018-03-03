@@ -5,19 +5,49 @@
   es6 fundamental concepts
 </title>
 <style>
+
+body {
+  padding:0 1.5rem 0 1.5rem;
+}
+
+hr {
+  margin: 2rem 0 2rem 0;
+}
+
 pre {
   background: #f9f9f9;
   padding:1rem;
 }
+
+#goToTop {
+  position: fixed;
+  width: 2rem;
+  height: 2rem;
+  text-align: center;
+  cursor: pointer;
+  background-color: #e1e1e1;
+  padding: 1rem;
+  bottom: 1rem;
+  right: 1rem;
+}
+
 </style>
 </head>
-<body>
+<body id="top">
+
+<div id="goToTop">
+  <a href="#top">
+    ^<br>top
+  </a>
+</div>
 
 <h1>
     es6: fundamental concepts
 </h1>
 
-Topics:
+<h2>
+  Topics
+</h2>
 <ul>
   <li>
     <a href="#constants">Constants</a>
@@ -32,10 +62,13 @@ Topics:
     <a href="#lexicalThis">Lexical <code>this</code></a>
   </li>
   <li>
+    <a href="#restParameters">Rest parameters</a>
   </li>
   <li>
+    <a href="#spreadOperator">Spread Operator</a>
   </li>
   <li>
+    <a href="#templateLiterals">Template Literals</a>
   </li>
   <li>
   </li>
@@ -45,6 +78,8 @@ Topics:
     <a href="#references">References</a>
   </li>
 </ul>
+
+<hr>
 
 <section role="main">
   <h2 id="constants">
@@ -97,6 +132,50 @@ Topics:
     }
     f(1) === 50;
   </pre>
+
+  <h2 id="restParameters">
+    Rest parameters
+  </h2>
+  <pre>
+    function f (x, y, ...a) {
+      return (x + y) * a.length
+    }
+    f(1, 2, "hello", true, 7) === 9
+  </pre>
+
+  <h2 id="spreadOperator">
+    Spread Operator
+  </h2>
+  <pre>
+    var params = [ "hello", true, 7 ]
+    var other = [ 1, 2, ...params ] // [ 1, 2, "hello", true, 7 ]
+
+    function f (x, y, ...a) {
+        return (x + y) * a.length
+    }
+    f(1, 2, ...params) === 9
+
+    var str = "foo"
+    var chars = [ ...str ] // [ "f", "o", "o" ]
+  </pre>
+
+  <h2 id="templateLiterals">
+    Template Literals
+  </h2>
+  <pre>
+    var customer = { name: "Foo" }
+    var card = { amount: 7, product: "Bar", unitprice: 42 }
+    var message = `Hello ${customer.name},
+    want to buy ${card.amount} ${card.product} for
+    a total of ${card.amount * card.unitprice} bucks?`
+  </pre>
+
+  <!--
+  <h2 id="">
+  </h2>
+  <pre>
+  </pre>
+  -->
 
   <hr/>
 
