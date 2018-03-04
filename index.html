@@ -71,8 +71,10 @@ pre {
     <a href="#templateLiterals">Template Literals</a>
   </li>
   <li>
+    <a href="#objectShorthand">Object shorthand</a>
   </li>
   <li>
+    <a href="#promises">Promises</a>
   </li>
   <li>
     <a href="#references">References</a>
@@ -168,6 +170,35 @@ pre {
     var message = `Hello ${customer.name},
     want to buy ${card.amount} ${card.product} for
     a total of ${card.amount * card.unitprice} bucks?`
+  </pre>
+
+  <h2 id="objectShorthand">
+    Object shorthand
+  </h2>
+  <pre>
+    obj = { x, y }
+  </pre>
+  <p>
+    The above ES6 syntax is equivalent to the following ES5 syntax:
+  </p>
+  <pre>
+    obj = { x: x, y: y };
+  </pre>
+
+  <h2 id="promises">
+    Promises
+  </h2>
+  <pre>
+    function msgAfterTimeout (msg, who, timeout) {
+      return new Promise((resolve, reject) => {
+          setTimeout(() => resolve(`${msg} Hello ${who}!`), timeout)
+      })
+    }
+    msgAfterTimeout("", "Foo", 100).then((msg) =>
+        msgAfterTimeout(msg, "Bar", 200)
+    ).then((msg) => {
+        console.log(`done after 300ms:${msg}`)
+    })
   </pre>
 
   <!--
