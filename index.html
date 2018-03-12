@@ -35,11 +35,11 @@ pre {
 </head>
 <body id="top">
 
-<div id="goToTop">
-  <a href="#top">
-    ^<br>top
-  </a>
-</div>
+<a href="#top">
+  <div id="goToTop">
+      ^<br>top
+  </div>
+</a>
 
 <h1>
     es6: fundamental concepts
@@ -52,7 +52,6 @@ pre {
   <li>
     <a href="#constants">Constants</a>
   </li>
-  <li>
     <a href="#blockScope">Block-Scoped variables</a>
   </li>
   <li>
@@ -75,6 +74,9 @@ pre {
   </li>
   <li>
     <a href="#promises">Promises</a>
+  </li>
+  <li>
+    <a href="#modules">modules</a>
   </li>
   <li>
     <a href="#references">References</a>
@@ -199,6 +201,23 @@ pre {
     ).then((msg) => {
         console.log(`done after 300ms:${msg}`)
     })
+  </pre>
+
+  <h2 id="modules">
+    Modules
+  </h2>
+  <pre>
+    //  lib/math.js
+    export function sum (x, y) { return x + y }
+    export var pi = 3.141593
+
+    //  someApp.js
+    import * as math from "lib/math"
+    console.log("2π = " + math.sum(math.pi, math.pi))
+
+    //  otherApp.js
+    import { sum, pi } from "lib/math"
+    console.log("2π = " + sum(pi, pi))
   </pre>
 
   <!--
